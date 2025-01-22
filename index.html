@@ -1,7 +1,25 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
 	<head>
+		<style>
+			/* 设置按钮样式 */
+			button {
+			  background-color: #007BFF; /* 蓝色背景 */
+			  color: white;            /* 按钮文字颜色 */
+			  border: none;            /* 去除边框 */
+			  border-radius: 5px;      /* 圆角 */
+			  padding: 3px 17px;      /* 内边距 */
+			  font-size: 13px;         /* 字体大小 */
+			  cursor: pointer;         /* 鼠标悬浮时显示为手型 */
+			  transition: background-color 0.3s; /* 添加背景颜色变化的过渡效果 */
+			}
+		
+			/* 鼠标悬浮时按钮的样式 */
+			button:hover {
+			  background-color: #0056b3; /* 更深的蓝色 */
+			}
+		  </style>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>❤chx❤爱你呦❤</title>
 		<link type="text/css" rel="stylesheet" href="./renxi/default.css">
@@ -32,8 +50,42 @@
 	</head>
 
 	<body>
-		<audio autoplay="autopaly" loop="loop">
-	<source src="wen.mp3" type="audio/mp3" /></audio>
+		<!-- <audio autoplay="autopaly" loop="loop">
+	<source src="wen.mp3" type="audio/mp3" /></audio> -->
+	<!-- 下拉列表 -->
+	<select id="music-select">
+		<option value="music/xiatiandefeng.mp3">温岚 - 夏天的风</option>
+		<option value="music/fangjian.mp3">刘瑞琪 - 房间</option>
+		<option value="music/陈芳语-爱你.mp3">陈芳语 - 爱你</option>
+		<option value="music/沈以诚 - 形容.mp3">沈以诚 - 形容</option>
+	  </select>
+	
+	  <!-- 播放按钮 -->
+	  <button onclick="playMusic()">点击播放</button>
+	  
+	  <!-- 音乐播放器 -->
+	  <audio id="background-audio" loop>
+		<source id="audio-source" src="xiatiandefeng.mp3" type="audio/mp3" />
+		您的浏览器不支持音频播放。
+	  </audio>
+	
+	  <script>
+		function playMusic() {
+		  // 获取下拉列表的值
+		  const selectedMusic = document.getElementById("music-select").value;
+	
+		  // 获取音频元素和音频源
+		  const audio = document.getElementById("background-audio");
+		  const source = document.getElementById("audio-source");
+	
+		  // 更新音频源并播放
+		  source.src = selectedMusic;
+		  audio.load(); // 重新加载音频
+		  audio.play(); // 播放音频
+		}
+
+	  </script>
+	  
 		<div id="main">
 			<div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
 			<div id="wrap">
@@ -58,7 +110,7 @@
 						<span class="say"></span><br>
 						<span class="say">套路都是我学的，但爱你是真的！ </span><br>
 						<span class="say"> </span><br>
-						<span class="say"> -- 爱你的明--</span>
+						<span class="say"> -- 爱你的--</span>
 						</i></b>
 						</font>
 					</div>
